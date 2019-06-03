@@ -1,7 +1,6 @@
 * Dotemacs (.emacs)
 ** What does it look like? 
-
-![](img.webp)
+[[./img.webp]]
 ** What is Emacs? 
 Emacs is a free (as in freedom) open source text editor.  
 
