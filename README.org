@@ -1,7 +1,7 @@
 * Dotemacs (.emacs)
 ** Pusheen gif to make this approachable 
 [[pusheen.gif]]
-** What my Emacs look like? 
+** What does my Emacs look like? 
 [[not-pusheen2.gif]]
 ** What is Emacs? 
 Emacs is a free (as in freedom) open source text editor.  
