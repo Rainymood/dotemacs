@@ -33,8 +33,8 @@ Bind =C-x v= to open =.emacs=
   (message "Opened:  %s" (buffer-name))))
 #+END_SRC
 
-For some reason =C-u= (which is half a page up in Vim-speak) doesn't
-for by default. I think it has to do with Emacs having =C-u= as an
+For some reason =C-u= (which is half a page up in Vim-speak) doesn't work
+by default. I think this has to do with Emacs using =C-u= as an
 important pre-fix. This fixes that
 #+BEGIN_SRC emacs-lisp
 ;; Makes C-u scroll up (see: https://stackoverflow.com/questions/14302171/ctrlu-in-emacs-when-using-evil-key-bindings)
