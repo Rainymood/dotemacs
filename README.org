@@ -1,6 +1,6 @@
 * Dotemacs (.emacs)
 ** What does it look like? 
-[[not-pusheen.gif]]
+[[not-pusheen2.gif]]
 ** Random Pusheen gif
 [[pusheen.gif]]
 ** What is Emacs? 
