@@ -1,0 +1,17 @@
+* .emacs
+
+Emacs is a free (as in freedom) open source text editor.  This
+repository contains my =.emacs= file which my configurations settings
+for Emacs.
+
+I have tried to keep my =.emacs= file as clean and well-documented as
+possible, but I have to admit I am not that knowledgeable in Lisp ... so I
+have to admit that I have shamelessly copy pasted some code that I do not
+understand in my =.emacs=.
+
+As is obvious from the large amount of =evil= bindings, I come from
+Vim. After a stint of Spacemacs (which I didn't like) I switched
+to Emacs completely solely for org-mode and I don't regret a thing. 
+
+Both Vim and Emacs have great features so why not take the best of
+both of worlds? 
