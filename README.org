@@ -1,17 +1,35 @@
-* .emacs
+* Dotemacs (.emacs)
 
-Emacs is a free (as in freedom) open source text editor.  This
-repository contains my =.emacs= file which my configurations settings
-for Emacs.
+** What is Emacs? 
+
+Emacs is a free (as in freedom) open source text editor.  
+
+This repository contains my =.emacs= file which is the main config file for
+Emacs. 
 
 I have tried to keep my =.emacs= file as clean and well-documented as
-possible, but I have to admit I am not that knowledgeable in Lisp ... so I
-have to admit that I have shamelessly copy pasted some code that I do not
-understand in my =.emacs=.
+possible, but I have to admit I am not that knowledgeable in Lisp and so my
+=.emacs= contains code that I shamelessly copied without understanding. 
+
+** Emacs vs Vim
 
 As is obvious from the large amount of =evil= bindings, I come from
 Vim. After a stint of Spacemacs (which I didn't like) I switched
 to Emacs completely solely for org-mode and I don't regret a thing. 
-
 Both Vim and Emacs have great features so why not take the best of
 both of worlds? 
+
+** Some interesting parts 
+
+Instead of having you trudge through my whole =.emacs= I would like to show you
+some pieces of my configuration file that you might find interesting. 
+
+```
+;; Bind =C-x v= to open ~/.emacs, remnant from my Vim times where
+;; =<Leader> v= would open my ~/.vimrc
+(global-set-key (kbd "\C-xv") (lambda () (interactive)
+  (find-file "~/.emacs")
+  (message "Opened:  %s" (buffer-name))))
+```
+
+
