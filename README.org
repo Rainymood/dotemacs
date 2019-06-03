@@ -1,7 +1,5 @@
 * Dotemacs (.emacs)
-
 ** What is Emacs? 
-
 Emacs is a free (as in freedom) open source text editor.  
 
 This repository contains my =.emacs= file which is the main config file for
@@ -12,7 +10,6 @@ possible, but I have to admit I am not that knowledgeable in Lisp and so my
 =.emacs= contains code that I shamelessly copied without understanding. 
 
 ** Emacs vs Vim
-
 As is obvious from the large amount of =evil= bindings, I come from
 Vim. After a stint of Spacemacs (which I didn't like) I switched
 to Emacs completely solely for org-mode and I don't regret a thing. 
@@ -20,16 +17,36 @@ Both Vim and Emacs have great features so why not take the best of
 both of worlds? 
 
 ** Some interesting parts 
-
 Instead of having you trudge through my whole =.emacs= I would like to show you
 some pieces of my configuration file that you might find interesting. 
 
-```
+Bind =C-x v= to open =.emacs=
+#+BEGIN_SRC emacs-lisp 
 ;; Bind =C-x v= to open ~/.emacs, remnant from my Vim times where
 ;; =<Leader> v= would open my ~/.vimrc
 (global-set-key (kbd "\C-xv") (lambda () (interactive)
   (find-file "~/.emacs")
   (message "Opened:  %s" (buffer-name))))
-```
+#+END_SRC
 
+For some reason =C-u= (which is half a page up in Vim-speak) doesn't
+for by default. I think it has to do with Emacs having =C-u= as an
+important pre-fix. This fixes that
+#+BEGIN_SRC emacs-lisp
+;; Makes C-u scroll up (see: https://stackoverflow.com/questions/14302171/ctrlu-in-emacs-when-using-evil-key-bindings)
+(setq evil-want-C-u-scroll t)
+#+END_SRC
+
+And possibly the most important one is this one: Vim-like paragraph
+movements don't work out of the box. This creates that Vim-like
+paragraph feel which we all know and love
+#+BEGIN_SRC emacs-lisp
+;; Make evil paragraphs behave like vim paragraphs
+;; See: https://emacs.stackexchange.com/questions/38596/make-evil-paragraphs-behave-like-vim-paragraphs
+(with-eval-after-load 'evil
+  (defadvice forward-evil-paragraph (around default-values activate)
+    (let ((paragraph-start (default-value 'paragraph-start))
+          (paragraph-separate (default-value 'paragraph-separate)))
+      ad-do-it)))
+#+END_SRC
 
